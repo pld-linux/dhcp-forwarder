@@ -2,5 +2,5 @@
 #DHCPFWD_CFGFILE=/etc/dhcp-fwd.conf
 #DHCPFWD_OPTIONS=
 
-# Define nice level for dhcp-forwarder 
+# Define nice level for dhcp-forwarder
 SERVICE_RUN_NICE_LEVEL="+0"
