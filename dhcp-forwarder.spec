@@ -70,7 +70,7 @@ fi
 %attr(755,root,root) %{_sbindir}/*
 %{_mandir}/man1/*
 %config(noreplace) %verify(not size mtime md5) /etc/dhcp-fwd.conf
-%attr(755,root,root) /etc/rc.d/init.d/dhcp-forwarder
+%attr(754,root,root) /etc/rc.d/init.d/dhcp-forwarder
 %attr(640,root,root) %config(noreplace) %verify(not size mtime md5) /etc/sysconfig/dhcp-forwarder
 # XXX: fix ownership
 %dir %attr(750,nobody,root) /var/lib/dhcp-fwd
