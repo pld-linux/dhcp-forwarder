@@ -2,12 +2,12 @@
 Summary:	DHCP relay agent
 Summary(pl):	Serwer po¶rednicz±cy dla ¿±dañ DHCP
 Name:		dhcp-forwarder
-Version:	0.6
+Version:	0.7
 Release:	0.1
 License:	GPL
 Group:		Networking/Daemons
 Source0:	http://www.tu-chemnitz.de/~ensc/dhcp-fwd/files/%{name}-%{version}.tar.bz2
-# Source0-md5:	cbe60c8c904394a8e38e12ac42c02284
+# Source0-md5:	e7f876e615ebc3f96418f6477b4451e2
 Source1:	%{name}.sysconfig
 Source2:	%{name}.init
 Source3:	%{name}.config
