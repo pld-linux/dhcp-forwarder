@@ -26,7 +26,6 @@ DHCPFWD_OPTIONS=
 # Check that networking is up.
 if is_yes "${NETWORKING}"; then
 	if [ ! -f /var/lock/subsys/network ]; then
-		# nls "ERROR: Networking is down. %s can't be run." dhcp-forwarder
 		msg_network_down dhcp-forwarder
 		exit 1
 	fi
@@ -40,25 +39,21 @@ case "$1" in
   start)
 	# Check if the service is already running?
 	if [ ! -f /var/lock/subsys/dhcp-forwarder ]; then
-		# show "Starting %s service" dhcp-forwarder
 		msg_starting dhcp-forwarder
 		daemon dhcp-fwd -c "${DHCPFWD_CFGFILE}" ${DHCPFWD_OPTIONS}
 		RETVAL=$?
 		[ $RETVAL -eq 0 ] && touch /var/lock/subsys/dhcp-forwarder
 	else
-		# show "%s service is already running." dhcp-forwarder
 		msg_already_running dhcp-forwarder
 	fi
 	;;
   stop)
 	if [ -f /var/lock/subsys/dhcp-forwarder ]; then
 		# Stop daemons.
-		# show "Stopping %s service" dhcp-forwarder
 		msg_stopping dhcp-forwarder
 		killproc dhcp-fwd
 		rm -f /var/lock/subsys/dhcp-forwarder
 	else
-		# show "%s service is not running." dhcp-forwarder
 		msg_not_running dhcp-forwarder
 	fi
 	;;
@@ -76,7 +71,6 @@ case "$1" in
 	RETVAL=$?
 	;;
   *)
-	# show "Usage: %s {start|stop|restart|reload|force-reload|status}"
 	msg_usage "$0 {start|stop|restart|force-reload|status}"
 	exit 3
 esac
