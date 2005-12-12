@@ -12,7 +12,7 @@ Source1:	%{name}.sysconfig
 Source2:	%{name}.init
 Source3:	%{name}.config
 URL:		http://www.tu-chemnitz.de/~ensc/dhcp-fwd/
-PreReq:		rc-scripts
+Requires:	rc-scripts
 Requires(post,preun):	/sbin/chkconfig
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -43,7 +43,7 @@ install -d $RPM_BUILD_ROOT{/etc/{rc.d/init.d,sysconfig},/var/lib/dhcp-fwd}
 
 install %{SOURCE1} $RPM_BUILD_ROOT/etc/sysconfig/dhcp-forwarder
 install %{SOURCE2} $RPM_BUILD_ROOT/etc/rc.d/init.d/dhcp-forwarder
-install %{SOURCE3} $RPM_BUILD_ROOT/etc/dhcp-fwd.conf
+install %{SOURCE3} $RPM_BUILD_ROOT%{_sysconfdir}/dhcp-fwd.conf
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -69,8 +69,8 @@ fi
 %doc README NEWS AUTHORS
 %attr(755,root,root) %{_sbindir}/*
 %{_mandir}/man1/*
-%config(noreplace) %verify(not size mtime md5) /etc/dhcp-fwd.conf
+%config(noreplace) %verify(not md5 mtime size) %{_sysconfdir}/dhcp-fwd.conf
 %attr(754,root,root) /etc/rc.d/init.d/dhcp-forwarder
-%attr(640,root,root) %config(noreplace) %verify(not size mtime md5) /etc/sysconfig/dhcp-forwarder
+%attr(640,root,root) %config(noreplace) %verify(not md5 mtime size) /etc/sysconfig/dhcp-forwarder
 # XXX: fix ownership
-%dir %attr(750,nobody,root) /var/lib/dhcp-fwd
+%dir %attr(750,nobody,root) /var/lib/dhcp-fwd # FIXME nobody user/group can't own files! -adapter.awk
