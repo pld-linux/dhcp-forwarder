@@ -1,6 +1,6 @@
 # TODO: nobody cannot own any files
 Summary:	DHCP relay agent
-Summary(pl.UTF-8):   Serwer pośredniczący dla żądań DHCP
+Summary(pl.UTF-8):	Serwer pośredniczący dla żądań DHCP
 Name:		dhcp-forwarder
 Version:	0.7
 Release:	0.1
