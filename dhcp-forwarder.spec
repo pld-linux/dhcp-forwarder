@@ -1,6 +1,6 @@
 # TODO: nobody cannot own any files
 Summary:	DHCP relay agent
-Summary(pl):	Serwer po¶rednicz±cy dla ¿±dañ DHCP
+Summary(pl.UTF-8):   Serwer poÅ›redniczÄ…cy dla Å¼Ä…daÅ„ DHCP
 Name:		dhcp-forwarder
 Version:	0.7
 Release:	0.1
@@ -21,11 +21,11 @@ dhcp-forwarder is a DHCP relay agent which forwards DHCP messages
 between subnets with different sublayer broadcast domains. It runs as
 non-root in a chroot-jail.
 
-%description -l pl
-dhcp-forwarder jest serwerem po¶rednicz±cym DHCP który przekazuje
-komunikaty DHCP pomiêdzy podsieciami w ró¿nych domenach
-rozg³oszeniowych. Dzia³a ze zwyk³ego u¿ytkownika (nie-roota) wewn±trz
-chrootowanego ¶rodowiska.
+%description -l pl.UTF-8
+dhcp-forwarder jest serwerem poÅ›redniczÄ…cym DHCP ktÃ³ry przekazuje
+komunikaty DHCP pomiÄ™dzy podsieciami w rÃ³Å¼nych domenach
+rozgÅ‚oszeniowych. DziaÅ‚a ze zwykÅ‚ego uÅ¼ytkownika (nie-roota) wewnÄ…trz
+chrootowanego Å›rodowiska.
 
 %prep
 %setup -q
